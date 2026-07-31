@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96.5" height="28" role="img" aria-label="PENPOT">
+    <title>PENPOT</title>
+    <g shape-rendering="crispEdges">
+        <rect width="96.5" height="28" fill="#ffffff" />
+    </g>
+    <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif"
+        text-rendering="geometricPrecision" font-size="100">
+        <image x="9" y="7" width="14" height="14"
+            href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJibGFjayIgcm9sZT0iaW1nIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBlbnBvdDwvdGl0bGU+PHBhdGggZD0iTTcuNjU0IDAgNS4xMyAzLjU1NHYyLjAxTDIuOTM0IDYuNjA4bC0uMDItLjAwOXYxMy4xMDlsOC41NjMgNC4wNDVMMTIgMjRsLjUyMy0uMjQ3IDguNTYzLTQuMDQ1VjYuNmwtLjAxNy4wMDgtMi4xOTYtMS4wNDVWMy41NTVsLS4wNzctLjEwOEwxNi4zNDkuMDAxbC0yLjUyNCAzLjU1NHYuMDA0TDExLjk4OS45NzNsLTEuODIzIDIuNTY2LS4wNjUtLjA5MXptLjQ0NyAyLjA2NS45NzYgMS4zNzRINi4yMzJsLjk2NC0xLjM1OHptOC42OTQgMCAuOTc2IDEuMzc0aC0yLjg0NWwuOTY1LTEuMzU4em0tNC4zNi45NzEuOTc2IDEuMzc1aC0yLjg0NWwuOTY1LTEuMzU5ek01Ljk2MiA0LjEzMmgxLjM1djQuNTQ0bC0xLjM1LS42MzhabTIuMDQyIDBoMS4zNDN2NS41MDZsLTEuMzQzLS42MzV6bTYuNjUyIDBoMS4zNVY5bC0xLjM1LjYzN1Y0LjEzMnptMi4wNDIgMGgxLjM0M3YzLjkwNWwtMS4zNDMuNjM0em0tNi40MDIuOTcyaDEuMzV2NS42MmwtMS4zNS0uNjM4em0yLjA0MiAwaDEuMzQzdjQuOTkzbC0xLjM0My42MzR6bTYuNTM0IDEuNDkzIDEuMTg4LjQ4Ni0xLjE4OC41NjF6TTUuMTMgNi42djEuMDQ3bC0xLjE4Ny0uNTYxWk0zLjk2IDguMjUxbDcuNTE3IDMuNTV2MTAuNzk1bC03LjUxNi0zLjU1em0xNi4wOCAwdjEwLjc5NGwtNy41MTcgMy41NVYxMS44MDJ6Ii8+PC9zdmc+" />
+        <text transform="scale(.1)" x="582.5" y="175" textLength="525" font-weight="bold"
+            fill="#333">PENPOT</text>
+    </g>
+</svg>

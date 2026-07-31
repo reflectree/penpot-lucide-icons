@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "module": "esnext",
+    "typeRoots": ["./node_modules/@types", "./node_modules/@penpot"],
+    "types": ["vite/client", "plugin-types"],
+    "allowArbitraryExtensions": true,
+    "allowJs": true,
+    "checkJs": true,
+    "moduleDetection": "force",
+    "composite": true
+  },
+  "include": ["./src/types/penpot.d.ts", "src/**/*.penpot.ts"]
+}

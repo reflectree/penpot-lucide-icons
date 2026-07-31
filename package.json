@@ -1,0 +1,35 @@
+{
+  "name": "penpot-lucide-icons",
+  "description": "Lucide plugin for Penpot",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev-build": "NODE_ENV=development vite build --mode development && vite preview",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
+  },
+  "devDependencies": {
+    "@penpot/plugin-types": "^1.4.2",
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "@tsconfig/svelte": "^5.0.8",
+    "@types/node": "^24.13.2",
+    "rolldown": "^1.2.1",
+    "svelte": "^5.56.4",
+    "svelte-check": "^4.7.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1",
+    "vite-plugin-generate-file": "^0.3.1"
+  },
+  "dependencies": {
+    "@penpot/plugin-styles": "^1.4.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "bits-ui": "^2.18.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.3.3",
+    "valibot": "^1.4.2"
+  }
+}

@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "@penpot/plugin-styles/styles.css";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+    /* background light variations */
+    --b-primary: light-dark(var(--lb-primary), var(--db-primary));
+    --b-secondary: light-dark(var(--lb-secondary), var(--db-secondary));
+    --b-tertiary: light-dark(var(--lb-tertiary), var(--db-tertiary));
+    --b-quaternary: light-dark(var(--lb-quaternary), var(--db-quaternary));
+
+    /* foreground light variations */ 
+    --f-primary: light-dark(var(--lf-primary), var(--df-primary));
+    --f-secondary: light-dark(var(--lf-secondary), var(--df-secondary));
+    
+    /* accent light variations */ ;
+    --a-primary: light-dark(var(--la-primary), var(--da-primary));
+    --a-primary-muted: light-dark(var(--la-primary-muted), var(--da-primary-muted));
+    --a-secondary: light-dark(var(--la-secondary), var(--da-secondary));
+    --a-tertiary: light-dark(var(--la-tertiary), var(--da-tertiary));
+    --a-quaternary: light-dark(var(--la-quaternary), var(--da-quaternary));
+}
+
+@theme {
+    --color-b-primary: var(--b-primary);
+    --color-b-secondary: var(--b-secondary);
+    --color-b-tertiary: var(--b-tertiary);
+    --color-b-quaternary: var(--b-quaternary);
+
+    --color-f-primary: var(--f-primary);
+    --color-f-secondary: var(--f-secondary);
+
+    --color-a-primary: var(--a-primary);
+    --color-a-primary-muted: var(--a-primary-muted);
+    --color-a-secondary: var(--a-secondary);
+    --color-a-tertiary: var(--a-tertiary);
+    --color-a-quaternary: var(--a-quaternary);
+
+    /* Status colors */
+    --color-success-50: var(--success-50);
+    --color-success-500: var(--success-500);
+    --color-success-950: var(--success-950);
+
+    --color-warning-50: var(--warning-50);
+    --color-warning-500: var(--warning-500);
+    --color-warning-950: var(--warning-950);
+
+    --color-error-50: var(--error-50);
+    --color-error-500: var(--error-500);
+    --color-error-950: var(--error-950);
+
+    --color-info-50: var(--info-50);
+    --color-info-500: var(--info-500);
+    --color-info-950: var(--info-950);
+
+    /* App colors */
+    --color-app-white: var(--app-white);
+    --color-app-black: var(--app-black);
+    --color-app-pink: var(--app-pink);
+    --color-app-blue: var(--app-blue);
+    --color-app-gold: var(--app-gold);
+    --color-app-indigo: var(--app-indigo);
+    --color-app-red: var(--app-red);
+    --color-app-yellow: var(--app-yellow);
+    --color-app-purple: var(--app-purple);
+    --color-app-lemon: var(--app-lemon);
+    --color-app-orange: var(--app-orange);
+}
