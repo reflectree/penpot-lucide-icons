@@ -9,7 +9,8 @@
     "dev-build": "NODE_ENV=development vite build --mode development && vite preview",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
+    "generate-icons": "jiti ./scripts/generate-icons.ts"
   },
   "devDependencies": {
     "@penpot/plugin-types": "^1.4.2",
