@@ -1,12 +1,28 @@
 import { indexTable } from "../index-table";
-import { uniq } from "es-toolkit";
+import { uniq, capitalize } from "es-toolkit";
 
-const categories = uniq(indexTable.flatMap((it) => it.categories));
+interface CategorySelectAbstraction {
+  value: string;
+  label: string;
+}
+
+export const DEFAULT_CATEGORY: CategorySelectAbstraction = {
+  label: "All categories",
+  value: "All categories",
+};
+
+const categories: CategorySelectAbstraction[] = [
+  DEFAULT_CATEGORY,
+  ...uniq(indexTable.flatMap((it) => it.categories)).map((value) => ({
+    value: value,
+    label: capitalize(value),
+  })).sort()
+];
 
 class GlobalStore {
   readonly categories = categories;
   currentTab = $state<string>("icons");
-  currentCategory = $state<string>();
+  currentCategory = $state<string>(DEFAULT_CATEGORY.value);
   search = $state("");
 }
 
