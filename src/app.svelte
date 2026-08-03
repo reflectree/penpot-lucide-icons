@@ -5,6 +5,7 @@
   import type { Theme } from "@penpot/plugin-types";
   import { parse } from "valibot";
   import { MessageThemeSchema } from "./messages/theme-change.message";
+  import Icons from "./tabs-content/icons.svelte";
 
   function updateTheme(theme?: Theme) {
     if (theme === undefined) {
@@ -25,15 +26,17 @@
   onMount(updateTheme);
 </script>
 
-<div class="pt-3">
+<div class="pt-3 flex flex-col">
   <Tabs.Root value="icons">
-    <MeowTabs.List class="body-s">
+    <MeowTabs.List class="body-s sticky top-4">
       <MeowTabs.Trigger value="icons">Icons</MeowTabs.Trigger>
       <MeowTabs.Trigger value="settings">Settings</MeowTabs.Trigger>
       <MeowTabs.Trigger value="info">Info</MeowTabs.Trigger>
     </MeowTabs.List>
     <div class="pt-3">
-      <Tabs.Content value="icons">icons content</Tabs.Content>
+      <Tabs.Content value="icons" class="flex-1 h-full">
+        <Icons />
+      </Tabs.Content>
       <Tabs.Content value="settings">settings content</Tabs.Content>
       <Tabs.Content value="info">info content</Tabs.Content>
     </div>
