@@ -60,6 +60,35 @@ export function pluginDevServe(): Plugin {
   };
 }
 
+export function pluginBuildForProduction(): Plugin {
+  return {
+    name: "build-plugin-as-iife",
+    apply: "build",
+    async closeBundle() {
+      await build({
+        configFile: false,
+        logLevel: "info",
+        build: {
+          outDir: "dist",
+          emptyOutDir: false,
+          rolldownOptions: {
+            input: "./src/plugin.penpot.ts",
+            external: ["penpot"],
+            output: {
+              format: "iife",
+              name: "penpotPlugin",
+              entryFileNames: "plugin.js",
+              globals: {
+                penpot: "penpot",
+              },
+            },
+          },
+        },
+      });
+    },
+  };
+}
+
 export default defineConfig(() => {
   const pluginJsPath = getPluginJsPath();
 
@@ -76,6 +105,7 @@ export default defineConfig(() => {
         },
       ]),
       pluginDevServe(),
+      pluginBuildForProduction(),
     ],
     resolve: {
       alias: [{ find: "$lib", replacement: "/src/lib/" }],
@@ -83,13 +113,11 @@ export default defineConfig(() => {
     build: {
       rolldownOptions: {
         input: {
-          plugin: "./src/plugin.penpot.ts",
           index: "./index.html",
         },
         output: {
           entryFileNames: (chunkInfo) => {
             switch (chunkInfo.name) {
-              case "plugin":
               case "index":
                 return "[name].js";
               default:

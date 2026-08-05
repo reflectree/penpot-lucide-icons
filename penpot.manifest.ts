@@ -1,5 +1,4 @@
 import packageJson from "./package.json" with { type: "json" };
-import * as path from "path";
 
 export type PenpotPermission =
   | "content:read"
