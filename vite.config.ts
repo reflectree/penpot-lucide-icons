@@ -60,11 +60,8 @@ export function pluginDevServe(): Plugin {
   };
 }
 
-export default defineConfig((env) => {
-  const { mode } = env;
-  const isDev = mode === "development";
-  const unixTimestamp = Date.now();
-  const pluginJsPath = getPluginJsPath(unixTimestamp, isDev);
+export default defineConfig(() => {
+  const pluginJsPath = getPluginJsPath();
 
   return {
     base: process.argv.includes('dev') ? '' : process.env.BASE_PATH ?? "",
@@ -93,7 +90,6 @@ export default defineConfig((env) => {
           entryFileNames: (chunkInfo) => {
             switch (chunkInfo.name) {
               case "plugin":
-                return pluginJsPath;
               case "index":
                 return "[name].js";
               default:

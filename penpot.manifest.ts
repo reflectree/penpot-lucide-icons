@@ -1,4 +1,5 @@
 import packageJson from "./package.json" with { type: "json" };
+import * as path from "path";
 
 export type PenpotPermission =
   | "content:read"
@@ -20,10 +21,14 @@ export interface PenpotManifest {
   permissions?: PenpotPermission[];
 }
 
-export function getPluginJsPath(unixBuildTime: number, isDev: boolean) {
-  return "plugin.js";
+export function getPluginJsPath() {
+  const base = process.argv.includes('dev') ? '' : process.env.BASE_PATH ?? "";
 
-  return isDev ? "plugin.js" : `plugin-${unixBuildTime}.js`;
+  if (base !== '') {
+    return `${base}/plugin.js`;
+  }
+
+  return "plugin.js";
 }
 
 export function getPenpotManifest(pluginJsPath: string): PenpotManifest {
