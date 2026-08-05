@@ -6,6 +6,14 @@
 ![Svelte](./readme/badges/svelte.svg)
 ![lucide](./readme/badges/lucide.svg)
 
+## Installation
+
+Go to Plugins tab and insert this URL:
+
+```
+https://reflectree.github.io/penpot-lucide-icons/
+```
+
 MVP (minimal valuable product) clone of Lucide Icons for Figma in Penpot
 
 List of working functionality:
