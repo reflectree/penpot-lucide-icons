@@ -44,7 +44,11 @@
     <Tabs.Content value="icons" class="flex-1 h-full">
       <Icons />
     </Tabs.Content>
-    <Tabs.Content value="settings">settings content</Tabs.Content>
-    <Tabs.Content value="info">info content</Tabs.Content>
+    <Tabs.Content value="settings">
+      Not done yet. You can look at progress <a class="text-a-primary underline" href="https://github.com/reflectree/penpot-lucide-icons">here :)</a>
+    </Tabs.Content>
+    <Tabs.Content value="info">
+      Not done yet. You can look at progress <a class="text-a-primary underline" href="https://github.com/reflectree/penpot-lucide-icons">here :)</a>
+    </Tabs.Content>
   </Tabs.Root>
 </div>
