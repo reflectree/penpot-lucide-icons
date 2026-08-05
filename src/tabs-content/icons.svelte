@@ -11,11 +11,19 @@
   import Search from "$lib/components/search.svelte";
   import { Portal, Select } from "bits-ui";
   import { UNDER_TABS_PORTAL_ID, via } from "../portals";
-  import { store } from "../stores/store.svelte";
+  import { DEFAULT_CATEGORY, store } from "../stores/store.svelte";
 
-  const fuse = new Fuse(indexTable, {
-    keys: [{ name: "name", weight: 2 }, "aliases", "tags", "categories"],
-  });
+  const filteredIndexTable = $derived(
+    store.currentCategory !== DEFAULT_CATEGORY.value
+      ? indexTable.filter((it) => it.categories.includes(store.currentCategory))
+      : indexTable,
+  );
+
+  const fuse = $derived(
+    new Fuse(filteredIndexTable, {
+      keys: [{ name: "name", weight: 2 }, "aliases", "tags", "categories"],
+    }),
+  );
 
   let search = $state("");
   const debouncedSearch = new Debounced(() => search, 500);
@@ -26,7 +34,7 @@
     if (search !== "") {
       return searchResults.map((it) => it.item);
     } else {
-      return indexTable;
+      return filteredIndexTable;
     }
   });
 </script>
@@ -58,8 +66,9 @@
       <Select.Portal>
         <Select.ContentStatic
           class={[
-            "fixed h-[calc(100vh-var(--spacing)*22)] right-0.5 top-23",
-            "bg-b-tertiary p-2 outline-2 rounded-md outline-b-quaternary",
+            "fixed h-[calc(100vh-var(--spacing)*24)] right-0.5 top-23",
+            "bg-b-tertiary p-2 outline-2! outline-b-quaternary!",
+            "rounded-md",
           ]}
         >
           <Select.ScrollUpButton
@@ -67,10 +76,10 @@
           >
             <ChevronsUp class="size-3" />
           </Select.ScrollUpButton>
-          <Select.Viewport>
+          <Select.Viewport class="w-40">
             {#each store.categories as category, i (i + category.value)}
               <Select.Item
-                class="flex cursor-pointer"
+                class="flex cursor-pointer body-m"
                 value={category.value}
                 label={category.label}
               >
@@ -86,7 +95,7 @@
             {/each}
           </Select.Viewport>
           <Select.ScrollDownButton
-            class="flex w-full items-center justify-center"
+            class="flex w-full items-center justify-center rounded-b-md"
           >
             <ChevronsDown class="size-3" />
           </Select.ScrollDownButton>
@@ -99,6 +108,7 @@
 <div class="text-f-primary flex flex-wrap justify-between pt-2 h-max">
   {#each icons as item}
     <button
+      title={item.name}
       class="hover:bg-b-secondary rounded-md p-3"
       onclick={() => {
         parent.postMessage(
