@@ -60,12 +60,14 @@ export function pluginDevServe(): Plugin {
   };
 }
 
-export default defineConfig(({ mode }) => {
+export default defineConfig((env) => {
+  const { mode } = env;
   const isDev = mode === "development";
   const unixTimestamp = Date.now();
   const pluginJsPath = getPluginJsPath(unixTimestamp, isDev);
 
   return {
+    base: process.argv.includes('dev') ? '' : process.env.BASE_PATH ?? "",
     plugins: [
       svelte(),
       tailwindcss(),
