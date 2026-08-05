@@ -45,10 +45,18 @@
       <Icons />
     </Tabs.Content>
     <Tabs.Content value="settings">
-      Not done yet. You can look at progress <a class="text-a-primary underline" href="https://github.com/reflectree/penpot-lucide-icons">here :)</a>
+      Not done yet. You can look at progress <a
+        class="text-a-primary underline"
+        target="_blank"
+        href="https://github.com/reflectree/penpot-lucide-icons">here :)</a
+      >
     </Tabs.Content>
     <Tabs.Content value="info">
-      Not done yet. You can look at progress <a class="text-a-primary underline" href="https://github.com/reflectree/penpot-lucide-icons">here :)</a>
+      Not done yet. You can look at progress <a
+        class="text-a-primary underline"
+        target="_blank"
+        href="https://github.com/reflectree/penpot-lucide-icons">here :)</a
+      >
     </Tabs.Content>
   </Tabs.Root>
 </div>
